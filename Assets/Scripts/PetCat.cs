@@ -15,4 +15,8 @@ public class PetCat : MonoBehaviour
     {
         
     }
+
+    void OnCollisionEnter() {
+        
+    }
 }
