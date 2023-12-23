@@ -1,0 +1,82 @@
+{
+    "Drink": [
+        {
+            "name": "Lemonade",
+            "price": 1.00,
+            "attributes": [
+                {
+                    "sweetness": 0.5,
+                    "caffeine": 0,
+                    "bubbles": 0,
+                    "creamy": 0,
+                    "temp": 0
+                }
+            ]
+        },
+        {
+            "name": "Iced Tea",
+            "price": 2.00,
+            "attributes": [
+                {
+                    "sweetness": 1,
+                    "caffeine": 1,
+                    "bubbles": 0,
+                    "creamy": 0,
+                    "temp": 0
+                }
+            ]
+        },
+        {
+            "name": "Hot Tea",
+            "price": 1.00,
+            "attributes": [
+                {
+                    "sweetness": 0.5,
+                    "caffeine": 1,
+                    "bubbles": 0,
+                    "creamy": 1,
+                    "temp": 1
+                }
+            ]
+        },
+        {
+            "name": "Water",
+            "price": 0.25,
+            "attributes": [
+                {
+                    "sweetness": 0,
+                    "caffeine": 0,
+                    "bubbles": 0,
+                    "creamy": 0,
+                    "temp": 0
+                }
+            ]
+        },
+        {
+            "name": "Coffee",
+            "price": 2.00,
+            "attributes": [
+                {
+                    "sweetness": 0,
+                    "caffeine": 1,
+                    "bubbles": 0,
+                    "creamy": 1,
+                    "temp": 1
+                }
+            ]
+        },
+        {
+            "name": "Soda",
+            "price": 2.25,
+            "attributes": [
+                {
+                    "sweetness": 1,
+                    "caffeine": 1,
+                    "bubbles": 1,
+                    "creamy": 0,
+                    "temp": 0
+                }
+            ]
+        }
+    ]
+}
