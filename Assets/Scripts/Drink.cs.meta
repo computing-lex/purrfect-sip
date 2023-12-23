@@ -3,7 +3,8 @@ guid: ca49b65933eeca547be48d443637989c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - drinkText: {fileID: 4900000, guid: c398198aeb4fa6548b1f46dbb912c050, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

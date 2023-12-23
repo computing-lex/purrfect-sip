@@ -578,6 +578,53 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1856671488}
   m_SourcePrefab: {fileID: 100100000, guid: a4eca90931b1afc41a4a17f158749edb, type: 3}
+--- !u!1 &1103606697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1103606699}
+  - component: {fileID: 1103606698}
+  m_Layer: 0
+  m_Name: drinkparser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1103606698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103606697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca49b65933eeca547be48d443637989c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drinkText: {fileID: 4900000, guid: c398198aeb4fa6548b1f46dbb912c050, type: 3}
+  drinkList:
+    drinks: []
+--- !u!4 &1103606699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103606697}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.96503043, y: 1.0605868, z: 3.8358066}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1147142313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,6 +1252,7 @@ MonoBehaviour:
   requestFaceTrackingPermissionOnStartup: 0
   requestEyeTrackingPermissionOnStartup: 0
   requestScenePermissionOnStartup: 0
+  requestRecordAudioPermissionOnStartup: 0
   _localDimming: 1
   _trackingOriginType: 1
   usePositionTracking: 1
@@ -2003,3 +2051,4 @@ SceneRoots:
   - {fileID: 1324805990}
   - {fileID: 747858519}
   - {fileID: 1147142314}
+  - {fileID: 1103606699}
