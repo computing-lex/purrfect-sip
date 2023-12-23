@@ -535,6 +535,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &729120791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2430742963157154207, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
+  m_PrefabInstance: {fileID: 1661905688705812340}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &747858519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1479,15 +1484,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2554440116119688706, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
       propertyPath: m_fontSize
-      value: 25
+      value: 32.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554440116119688706, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
+      propertyPath: m_margin.w
+      value: 63.718124
       objectReference: {fileID: 0}
     - target: {fileID: 2554440116119688706, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
       propertyPath: m_margin.x
-      value: -143.31569
+      value: -133.71193
       objectReference: {fileID: 0}
     - target: {fileID: 2554440116119688706, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
       propertyPath: m_margin.y
-      value: -67.12095
+      value: -50.573776
       objectReference: {fileID: 0}
     - target: {fileID: 2554440116119688706, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
       propertyPath: m_margin.z
@@ -1497,10 +1506,26 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 2554440116119688706, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554440116119688706, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8344574872491255629, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
       propertyPath: m_Name
       value: Cat
       objectReference: {fileID: 0}
+    - target: {fileID: 8378629795312839913, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
+      propertyPath: titleBox
+      value: 
+      objectReference: {fileID: 729120791}
+    - target: {fileID: 8378629795312839913, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
+      propertyPath: descriptionBox
+      value: 
+      objectReference: {fileID: 412424018}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
