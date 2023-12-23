@@ -5,14 +5,12 @@ using UnityEngine;
 public class Following : CatState
 {
     public Wandering wanderState;
-    public bool canSeeCustomer;
-    public bool canSeeCat;
 
     public override CatState RunState(Cat cat)
     {
         CatState nextState = this;
 
-        if (!canSeeCustomer) {
+        if (!cat.CanSeeCustomer) {
             nextState = wanderState;
             Debug.Log("Wandering.");
         }

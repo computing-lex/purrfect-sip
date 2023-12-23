@@ -248,13 +248,14 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.toonshader": {
-      "version": "file:C:/Users/thade/Downloads/com.unity.toonshader-0.9.5-preview.tgz",
+      "version": "0.9.5-preview",
       "depth": 0,
-      "source": "local-tarball",
+      "source": "registry",
       "dependencies": {
         "com.unity.film-internal-utilities": "0.18.4-preview",
         "com.unity.render-pipelines.core": "10.0.0"
-      }
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.ugui": {
       "version": "1.0.0",
