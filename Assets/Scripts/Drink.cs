@@ -7,15 +7,18 @@ using UnityEngine;
 // It holds all the info about individual drinks as well.
 public class DrinkParser : MonoBehaviour
 {
+    public static DrinkParser parser;
     public TextAsset drinkText;
     public DrinkList drinkList;
 
-    void Start() {
+    void Start()
+    {
+        parser = this;
         drinkList = JsonUtility.FromJson<DrinkList>(drinkText.text);
         Debug.Log("Drinks read!");
     }
-    
-    // Classes
+
+    // Classes ------------------------------------------------
     [Serializable]
     public class DrinkList
     {
@@ -29,14 +32,16 @@ public class DrinkParser : MonoBehaviour
         public float price;
         public DrinkAttributes attributes;
 
-        public Drink() {
+        public Drink()
+        {
             name = "Empty";
             price = 0;
         }
 
         // CopyValues exists to duplicate a drink, so that we can then
         // allow the player to modify a drink (sweeten, heat, cool down, etc.)
-        public void CopyValues(Drink existingDrink) {
+        public void CopyValues(Drink existingDrink)
+        {
             name = existingDrink.name;
             price = existingDrink.price;
             attributes = existingDrink.attributes;
@@ -60,7 +65,7 @@ public class DrinkParser : MonoBehaviour
             creamy = 0f;
             temp = 0.5f;
         }
-        
+
         // Because we are reading from JSON, I will probably remove this
         public DrinkAttributes(float sweetness, float caffeine, float bubbly, float creamy, float temp)
         {

@@ -261,9 +261,10 @@ GameObject:
   - component: {fileID: 8939442782360216940}
   - component: {fileID: 853202436760422672}
   - component: {fileID: 193074089298858784}
+  - component: {fileID: 5197402628136740375}
   m_Layer: 0
   m_Name: cup
-  m_TagString: Untagged
+  m_TagString: Cup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,7 +278,7 @@ Transform:
   m_GameObject: {fileID: 6551962496723048645}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.74200934, y: 1.462, z: 0.6598}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -298,7 +299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd7a2d8dd398434ab1199a796ed5594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drinkParser: {fileID: 0}
   drink:
     name: 
     price: 0
@@ -308,7 +308,8 @@ MonoBehaviour:
       bubbles: 0
       creamy: 0
       temp: 0.5
-  respawnPoint: {x: 0.7420093, y: 1.462, z: 0.6598}
+  cupInDispenser: 0
+  respawnPoint: {x: 0, y: 2, z: 0}
   respawn: 0
   randomizeDrink: 0
   abyss: {fileID: 0}
@@ -362,3 +363,44 @@ CapsuleCollider:
   m_Height: 0.16043593
   m_Direction: 1
   m_Center: {x: 0, y: 0.07021796, z: 0}
+--- !u!114 &5197402628136740375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6551962496723048645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a7676b01585ce43908639a27765dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 0}
+  _rigidbody: {fileID: 853202436760422672}
+  _physicsGrabbable: {fileID: 0}
+  _resetGrabOnGrabsUpdated: 1
+  _scoringModifier:
+    _positionRotationWeight: 0.8
+  _slippiness: 0
+  _supportedGrabTypes: 3
+  _pinchGrabRules:
+    _thumbRequirement: 1
+    _indexRequirement: 1
+    _middleRequirement: 1
+    _ringRequirement: 0
+    _pinkyRequirement: 0
+    _unselectMode: 0
+  _palmGrabRules:
+    _thumbRequirement: 1
+    _indexRequirement: 2
+    _middleRequirement: 2
+    _ringRequirement: 2
+    _pinkyRequirement: 1
+    _unselectMode: 0
+  _movementProvider: {fileID: 0}
+  _handAligment: 1
+  _handGrabPoses: []

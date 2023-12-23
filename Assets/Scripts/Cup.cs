@@ -5,11 +5,13 @@ using UnityEngine;
 public class Cup : MonoBehaviour
 {
     // Select drink from drink list
-    [SerializeField] private DrinkParser drinkParser;
     private DrinkParser.Drink randomDrink;
-    
+
     // The drink currently in the cup
     [SerializeField] private DrinkParser.Drink drink;
+
+    [SerializeField] private bool cupInDispenser;
+    private Rigidbody cupRigidbody;
 
     // Debug settings
     [SerializeField] private Vector3 respawnPoint;
@@ -19,28 +21,62 @@ public class Cup : MonoBehaviour
     // Respawn objects if beyond the abyss
     public GameObject abyss;
 
-    void Start()
+    void Awake()
     {
+        cupInDispenser = true;
         drink = new DrinkParser.Drink();
+
+        RandomizeDrink(DrinkParser.parser.drinkList);
+        randomizeDrink = false;
+
+        cupRigidbody = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
+        cupRigidbody.isKinematic = cupInDispenser;
+
         if (respawn || !CheckOOB())
         {
             transform.position = respawnPoint;
             respawn = false;
         }
 
-        if (randomizeDrink) {
-            RandomizeDrink(drinkParser.drinkList);
+        if (randomizeDrink)
+        {
+            RandomizeDrink(DrinkParser.parser.drinkList);
             randomizeDrink = false;
         }
     }
 
-    private void RandomizeDrink(DrinkParser.DrinkList options) {
-        randomDrink = options.drinks[Random.Range(0,(options.drinks.Length - 1))];
+    void OnCollisionEnter(Collision other) {
+        if (other.gameObject.CompareTag("CupDispenser"))
+        {
+            cupInDispenser = true;
+            Debug.Log("In cup holder!");
+        }
+
+        //cupInDispenser = true;
+        Debug.Log("Entered collider");
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("CupDispenser"))
+        {
+            cupInDispenser = false;
+            Debug.Log("Exited cup holder!");
+        }
+
+        cupInDispenser = false;
+        Debug.Log("Exited collider");
+    }
+
+    private void RandomizeDrink(DrinkParser.DrinkList options)
+    {
+        randomDrink = options.drinks[Random.Range(0, (options.drinks.Length - 1))];
         drink.CopyValues(randomDrink);
+
         Debug.Log("Drink randomized! New drink is " + drink.name);
     }
 
@@ -58,5 +94,10 @@ public class Cup : MonoBehaviour
         }
 
         return inBounds;
+    }
+
+    public bool IsInDispenser()
+    {
+        return cupInDispenser;
     }
 }
