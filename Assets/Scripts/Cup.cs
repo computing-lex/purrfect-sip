@@ -9,9 +9,7 @@ public class Cup : MonoBehaviour
 
     // The drink currently in the cup
     [SerializeField] private DrinkParser.Drink drink;
-
     [SerializeField] private bool cupInDispenser;
-    private Rigidbody cupRigidbody;
 
     // Debug settings
     [SerializeField] private Vector3 respawnPoint;
@@ -23,18 +21,14 @@ public class Cup : MonoBehaviour
 
     void Awake()
     {
-        cupInDispenser = true;
         drink = new DrinkParser.Drink();
 
         RandomizeDrink(DrinkParser.parser.drinkList);
         randomizeDrink = false;
-
-        cupRigidbody = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        cupRigidbody.isKinematic = cupInDispenser;
 
         if (respawn || !CheckOOB())
         {
@@ -47,29 +41,6 @@ public class Cup : MonoBehaviour
             RandomizeDrink(DrinkParser.parser.drinkList);
             randomizeDrink = false;
         }
-    }
-
-    void OnCollisionEnter(Collision other) {
-        if (other.gameObject.CompareTag("CupDispenser"))
-        {
-            cupInDispenser = true;
-            Debug.Log("In cup holder!");
-        }
-
-        //cupInDispenser = true;
-        Debug.Log("Entered collider");
-    }
-
-    void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.CompareTag("CupDispenser"))
-        {
-            cupInDispenser = false;
-            Debug.Log("Exited cup holder!");
-        }
-
-        cupInDispenser = false;
-        Debug.Log("Exited collider");
     }
 
     private void RandomizeDrink(DrinkParser.DrinkList options)
@@ -94,10 +65,5 @@ public class Cup : MonoBehaviour
         }
 
         return inBounds;
-    }
-
-    public bool IsInDispenser()
-    {
-        return cupInDispenser;
     }
 }
