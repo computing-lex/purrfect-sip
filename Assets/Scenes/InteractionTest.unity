@@ -357,6 +357,7 @@ GameObject:
   - component: {fileID: 252922217}
   - component: {fileID: 252922216}
   - component: {fileID: 252922215}
+  - component: {fileID: 252922219}
   m_Layer: 0
   m_Name: CupDispenser
   m_TagString: Untagged
@@ -383,8 +384,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.6724268, z: 1}
+  m_Center: {x: 0, y: -0.16378625, z: 0}
 --- !u!23 &252922216
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -448,10 +449,30 @@ Transform:
   m_LocalScale: {x: 0.19, y: 0.19, z: 0.19}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1407645740}
   - {fileID: 612275628}
   - {fileID: 758609031}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &252922219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252922214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec12e90c2b127447910b8d3872f638e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cupPrefab: {fileID: 6551962496723048645, guid: cc63dbdd602c75d47b802b6d7b96e3cc, type: 3}
+  currentCupObj: {fileID: 1354615117}
+  hasCup: 0
+  spawnPoint: {fileID: 1407645740}
+  respawnCup: 0
+  killAllCups: 0
+  abyss: {fileID: 1147142313}
 --- !u!4 &345138132 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 151913255761010574, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
@@ -551,6 +572,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 189475497}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &588749059 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6794392123160675839, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
+  m_PrefabInstance: {fileID: 1661905688705812340}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe8687c2c3466f478e7e4e830ff46dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &612275627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -623,6 +655,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CupDispenser
       objectReference: {fileID: 0}
+    - target: {fileID: 2770324832858192405, guid: d5301e8e1576c7a4381c7e0bb410f948, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 94a592426c370df47b9b9fda50e284c1, type: 2}
     - target: {fileID: 8828647794602984051, guid: d5301e8e1576c7a4381c7e0bb410f948, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -674,6 +710,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 252922218}
     m_Modifications:
+    - target: {fileID: 853202436760422672, guid: cc63dbdd602c75d47b802b6d7b96e3cc, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2474918491252591943, guid: cc63dbdd602c75d47b802b6d7b96e3cc, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.2631583
@@ -730,6 +770,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: cup
       objectReference: {fileID: 0}
+    - target: {fileID: 6551962496723048645, guid: cc63dbdd602c75d47b802b6d7b96e3cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939442782360216940, guid: cc63dbdd602c75d47b802b6d7b96e3cc, type: 3}
+      propertyPath: abyss
+      value: 
+      objectReference: {fileID: 1147142313}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1019,6 +1067,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1125460040}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1354615117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6551962496723048645, guid: cc63dbdd602c75d47b802b6d7b96e3cc, type: 3}
+  m_PrefabInstance: {fileID: 758609030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1407645739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407645740}
+  m_Layer: 0
+  m_Name: respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1407645740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407645739}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.343, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 252922218}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1499360702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1113,6 +1197,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4453513310108136, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
   m_PrefabInstance: {fileID: 1499360702}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1664641205 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8378629795312839913, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
+  m_PrefabInstance: {fileID: 1661905688705812340}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478b7cbb7634bfc46b1de08bbea32782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1740870531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1528,6 +1623,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 277698905780770259, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
+      propertyPath: cat
+      value: 
+      objectReference: {fileID: 1664641205}
+    - target: {fileID: 277698905780770259, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
+      propertyPath: currentState
+      value: 
+      objectReference: {fileID: 588749059}
     - target: {fileID: 5350221520229659499, guid: 96a67ae75fdf2904aa2bb777c712d0dc, type: 3}
       propertyPath: m_Enabled
       value: 0

@@ -9,7 +9,6 @@ public class Cup : MonoBehaviour
 
     // The drink currently in the cup
     [SerializeField] private DrinkParser.Drink drink;
-    [SerializeField] private bool cupInDispenser;
 
     // Debug settings
     [SerializeField] private Vector3 respawnPoint;

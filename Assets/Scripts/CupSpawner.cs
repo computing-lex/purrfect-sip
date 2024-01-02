@@ -8,10 +8,9 @@ public class CupSpawner : MonoBehaviour
     // Cup management
     public GameObject cupPrefab;
     [SerializeField] private GameObject currentCupObj;
-    private Cup currentCup;
-    private List<GameObject> activeCups;
+    //private List<GameObject> activeCups;
 
-    private bool hasCup;
+    [SerializeField] private bool hasCup = true;
 
     // Debug values
     [SerializeField] private Transform spawnPoint;
@@ -23,17 +22,18 @@ public class CupSpawner : MonoBehaviour
     void Start()
     {
         currentCupObj = SpawnCup();
-        activeCups = new List<GameObject>();
+        //activeCups = new List<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //currentCup = currentCupObj.GetComponent<Cup>();
+        currentCupObj.GetComponent<Rigidbody>().isKinematic = true;
 
         if (!hasCup)
         {
             currentCupObj = SpawnCup();
+            hasCup = true;
         }
 
         if (respawnCup)
@@ -42,24 +42,25 @@ public class CupSpawner : MonoBehaviour
             respawnCup = false;
         }
 
-        if (killAllCups) { KillAllCups(); }
+        //if (killAllCups) { KillAllCups(); }
     }
 
-    private void KillAllCups()
-    {
-        foreach (GameObject item in activeCups)
-        {
-            Destroy(item);
-        }
+    // private void KillAllCups()
+    // {
+    //     foreach (GameObject item in activeCups)
+    //     {
+    //         Destroy(item);
+    //     }
 
-        activeCups.Clear();
-    }
+    //     activeCups.Clear();
+    // }
 
     void OnCollisionExit(Collision other)
     {
         if (other.gameObject.CompareTag("Cup"))
         {
             hasCup = false;
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
@@ -68,8 +69,8 @@ public class CupSpawner : MonoBehaviour
         GameObject newCup = Instantiate(cupPrefab, spawnPoint.position, spawnPoint.rotation);
         newCup.GetComponent<Cup>().abyss = abyss;
 
-        activeCups.Add(newCup);
-        newCup.name = "Drink" + activeCups.Count; 
+        //activeCups.Add(newCup);
+        newCup.name = "Drink";
 
         return newCup;
     }
